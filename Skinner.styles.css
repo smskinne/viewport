@@ -1,6 +1,22 @@
-/* YOUR NAME GOES HERE */
+/* Shaun Skinner */
 
 /* --------------- ADD CSS RESET TO THE FILE HERE --------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
 
 
 
@@ -31,9 +47,12 @@
 
 /* ----- CHECK FOR USER DARK MODE PREFERENCE ----- */
 /* --------------- BEGIN USER PREFERS DARK COLOR SCHEME QUERY --------------- */
-
-/* CHANGE THE BODY'S BACKGROUND COLOR TO THE DARK GRAY IF THE USER PREFERS DARK MODE */
-
+@media (prefers-color-scheme: dark) {
+    /* CHANGE THE BODY'S BACKGROUND COLOR TO THE DARK GRAY IF THE USER PREFERS DARK MODE */
+    body{
+        background-color: var(--dark-gray);
+    }
+}
 /* --------------- END USER PREFERS DARK COLOR SCHEME QUERY --------------- */
 
 
@@ -131,6 +150,8 @@ section{
 }
 
 /* ---------- EXTRA SMALL SCREEN STYLES ---------- */
+
+
 header, footer{
     background-color: var(--pink);
     color: var(--white);
@@ -148,9 +169,11 @@ img{
 }
 
 
+
 /* ---------- SMALL SCREEN STYLES ---------- */
 /* --------------- BEGIN SMALL SCREEN SIZES --------------- */
-    /* header, footer{
+@media (min-width: 620px) and (max-width: 799px) {
+     header, footer{
         background-color: var(--lime-green);
         color: var(--dark-gray);
     }
@@ -175,28 +198,38 @@ img{
     img{
         width: 200px;
         max-width: 200px;
-    } */
+    } 
+}
 /* --------------- END SMALL SCREEN SIZES --------------- */
 
 
 
 /* ---------- MEDIUM SCREEN STYLES ---------- */
 /* --------------- BEGIN MEDIUM SCREEN SIZES --------------- */
-    /* header, footer{
+@media (min-width: 800px) and (max-width: 1379px) {
+    
+
+    header, footer{
         background-color: var(--black);
         color: var(--white);
     }   
 
     main{
+        display:grid;
+        gap: 0.75em;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: auto;
     }
 
     section{
         background-color: var(--light-gray);
+        color: var(--black);
+        margin: 0;
     }
 
     #one{
         grid-column: 1/3;
+        grid-row: 1/2;
     }
 
     #two{
@@ -204,17 +237,41 @@ img{
         grid-row: 1/3;
     }
 
+    #three{
+        grid-column: 1/2;
+        grid-row: 2/2;
+    }
+
+    #four{
+        grid-column: 2/3;
+        grid-row: 2/2;
+    }
+    #five{
+        grid-column: 1/2;
+        grid-row: 3/3;
+    }
+    #six{
+        grid-column: 2/3;
+        grid-row: 3/3;
+    }
+
     #seven{
         grid-column: 3/4;
         grid-row: 3/5;
-    } */
+    } 
+    #eight{
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+}
 /* --------------- END MEDIUM SCREEN SIZES --------------- */
 
 
 
 /* ---------- LARGE SCREEN STYLES ---------- */
 /* --------------- BEGIN LARGE SCREEN SIZES --------------- */
-    /* header, footer{
+@media (min-width: 1380px) {
+    header, footer{
         background-color: var(--lime-green);
         color: var(--dark-gray);
     }
@@ -225,9 +282,12 @@ img{
 
     section{
         background-color: var(--blue);
+        margin: 0;
     }
 
     main{
+        display: grid;
+        gap: 0.75em;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
@@ -245,34 +305,42 @@ img{
 
     #seven, #eight{
         grid-row: 3/4;
-    } */
+    } 
+}
 /* --------------- END LARGE SCREEN SIZES --------------- */
 
 
 
 /* ---------- ADJUSTING RESPONSIVE IMAGE SIZE ---------- */
 /* --------------- BEGIN RESPONSIVE IMAGE ADJUST SIZES --------------- */
-    /* img{
+@media (min-width: 620px) and (max-width: 1800px) {
+
+    img{
         width: 300px;
         max-width: 300px;
-    } */
+    } 
+}
 /* --------------- END RESPONSIVE IMAGE ADJUST SIZES --------------- */
 
 
 
 /* ---------- EXTRA LARGE SCREEN STYLES ---------- */
 /* --------------- BEGIN EXTRA LARGE SCREEN SIZES --------------- */
-    /* header, footer{
+@media (min-width: 1800px) {
+    header, footer{
         background-color: var(--orange);
         padding-left: 5%;
     }
 
     main{
+        display: grid;
+        gap: 0.75em;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         margin: 1em auto;
     }
 
     section{
+        margin: 0;
         background-color: var(--blue-gray);
         color: var(--dark-gray);
     }
@@ -327,5 +395,6 @@ img{
 
     #three p, #four p, #five p, #six p{
         padding-top: 2em;
-    } */
+    } 
+}
 /* --------------- END EXTRA LARGE SCREEN SIZES --------------- */
